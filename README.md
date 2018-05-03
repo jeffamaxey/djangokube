@@ -12,8 +12,9 @@ This app helps you to keep track of books and movies that you plan to check out.
 
 # Demo
 
-See the app deployed on Google Cloud Platform: http://35.188.115.96
-Log in with your Google account to see the dashboard
+See the app deployed on Google Cloud Platform: http://35.188.115.96 
+
+Log in with your Google account to see the dashboard.
 
 # Run
 
