@@ -12,7 +12,7 @@ This app helps you to keep track of books and movies that you plan to check out.
 
 # Demo
 
-See the app deployed with Kubernetes on *Microsoft Azure*: http://104.211.63.10 (also deployed on Google Kubernetes Engine previously). 
+See the app deployed with Kubernetes on *Microsoft Azure*: http://wishlist.mee.how (also deployed on Google Kubernetes Engine previously). 
 
 Log in with your Google account to see the dashboard.
 
