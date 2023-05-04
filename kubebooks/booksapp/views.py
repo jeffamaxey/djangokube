@@ -7,11 +7,11 @@ import json
 
 def index(request):
     """Redirecting to dashboard if the user is authorized."""
-    if request.user.is_anonymous == True:
-        return redirect('main')
-    else:
-        return redirect('dashboard')
-    return HttpResponse("OK")
+    return (
+        redirect('main')
+        if request.user.is_anonymous == True
+        else redirect('dashboard')
+    )
 
 def main(request):
     """Invitation to log in."""
@@ -20,7 +20,6 @@ def main(request):
 @login_required
 def dashboard(request):
     """Displaying a Wishlist of an authenticated user."""
-    context_dict = {}
     user = request.user
     auth0user = user.social_auth.get(provider="auth0")
     userdata = {
@@ -28,7 +27,7 @@ def dashboard(request):
     'name': user.first_name,
     'picture': auth0user.extra_data['picture']
     }
-    context_dict["userdata"] = json.dumps(userdata, indent=4)
+    context_dict = {"userdata": json.dumps(userdata, indent=4)}
     context_dict["auth0User"] = auth0user
     try:
         items = Item.objects.filter(user=auth0user.uid)
